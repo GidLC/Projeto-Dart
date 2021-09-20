@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'View/estoque_list.dart';
 
 class MyApp extends StatelessWidget {
+  static const HOME = '/';
+  static const CADASTRO_PRODUTO = 'cadastro_produto';
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -21,8 +22,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/': (context) => estoque_list(),
-        'cadastroProduto': (context) => estoque_list()
+        HOME: (context) => estoque_list(),
+        CADASTRO_PRODUTO: (context) => estoque_list()
       },
     );
   }
