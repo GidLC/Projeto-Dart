@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:wigtes_atividade/app/Database/conexao.dart';
 import 'package:wigtes_atividade/app/MyApp.dart';
+import 'package:wigtes_atividade/app/Database/sqlite/dao/produto_dao_imple.dart';
+import 'package:wigtes_atividade/app/dominio/entidade/produto.dart';
 
 class estoque_list extends StatelessWidget {
   final list = [
@@ -10,9 +12,8 @@ class estoque_list extends StatelessWidget {
     {'produto': 'tablet', 'marca': 'Positivo', 'valor': '650'},
   ];
 
-  Future<List<Map<String, dynamic>>> encontrar() async {
-    Database bd = await Conexao.get();
-    return bd.query('produtos');
+  Future<List<Produtos>> encontrar() async {
+    return ProdutoDAOimple().find();
   }
 
   @override
