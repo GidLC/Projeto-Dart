@@ -4,16 +4,17 @@ import 'dart:async';
 import 'package:wigtes_atividade/app/Database/sqlite/script.dart';
 
 class Conexao {
-  static Database bd = bd;
+  static Database _bd = _bd;
 
   static String get createTable => '';
 
   static String get insert => '';
 
   static Future<Database> get() async {
-    if (bd == null) {
+    if (_bd == null) {
       var path = join(await getDatabasesPath(), 'bd_produtos');
-      bd = await openDatabase(
+      deleteDatabase(path);
+      _bd = await openDatabase(
         path,
         version: 1,
         onCreate: (bd, v) {
@@ -24,6 +25,6 @@ class Conexao {
         },
       );
     }
-    return bd;
+    return _bd;
   }
 }
