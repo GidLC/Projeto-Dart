@@ -1,6 +1,6 @@
 final criarBanco = ''' 
 CREATE TABLE produtos(
-  id INT NOT NULL PRIMARY KEY
+  id INTEGER NOT NULL PRIMARY KEY
   ,produto VARCHAR(200) NOT NULL
   ,marca VARCHAR (50) NOT NULL
   ,valor DOUBLE(18,2) NOT NULL

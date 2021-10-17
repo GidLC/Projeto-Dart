@@ -1,8 +1,10 @@
-class Produtos {
-  int id = 0;
-  String produto = '';
-  String marca = '';
-  double valor = 0;
+import 'dart:html';
 
-  Produtos(int id, produto, marca, valor);
+class Produtos {
+  var id;
+  var produto;
+  var marca;
+  var valor;
+
+  Produtos({this.id, this.produto, this.marca, this.valor});
 }
