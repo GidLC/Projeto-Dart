@@ -33,7 +33,7 @@ class cadastro_produto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _back = ProdutoFormBack();
+    var _back = ProdutoFormBack(context);
     return Scaffold(
         appBar: AppBar(
           title: Text('Cadastro de Produtos'),
@@ -43,7 +43,7 @@ class cadastro_produto extends StatelessWidget {
                 onPressed: () {
                   _form.currentState!.validate();
                   _form.currentState!.save();
-                  if (_back.Valido) {
+                  if (_back.isValid) {
                     _back.save();
                     Navigator.of(context).pop();
                   }

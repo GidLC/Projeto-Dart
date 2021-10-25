@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:wigtes_atividade/app/Database/conexao.dart';
-import 'package:wigtes_atividade/app/MyApp.dart';
 import 'package:wigtes_atividade/app/Database/sqlite/dao/produto_dao_imple.dart';
+import 'package:wigtes_atividade/app/MyApp.dart';
 import 'package:wigtes_atividade/app/dominio/entidade/produto.dart';
 
 class estoque_list extends StatelessWidget {
@@ -56,7 +56,7 @@ class estoque_list extends StatelessWidget {
         appBar: AppBar(title: Text('Estoque'), actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(MyApp.CADASTRO_PRODUTO);
+              _back.goToForm(context);
             },
             icon: Icon(Icons.add),
           )
@@ -75,6 +75,9 @@ class estoque_list extends StatelessWidget {
                       var produtos = list[i];
                       return ListTile(
                           title: Text('${produtos['produto']}'),
+                          onTap: () {
+                            _back.goToDetails(context, produtos);
+                          },
                           subtitle: Text('${produtos['valor']}'),
                           trailing: Container(
                             width: 100,

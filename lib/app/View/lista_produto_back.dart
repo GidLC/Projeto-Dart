@@ -30,6 +30,11 @@ abstract class _ListaProdutoBack with Store {
         .then(refreshList);
   }
 
+  GoToDetails(BuildContext context, [Produtos? produtos]) {
+    Navigator.of(context)
+        .pushNamed(MyApp.PRODUTO_DETALHES, arguments: produtos);
+  }
+
   remover(int id) {
     _service.remove(id);
     refreshList();

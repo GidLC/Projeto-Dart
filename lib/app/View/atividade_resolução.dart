@@ -5,3 +5,5 @@ forma mais independentes. */
 /* Camada de dominio é aquela que contém as regras de negócio, ou seja, aquela que possui
 a resolução da problemática da questão, sendo essas independentes do local onde serão implementadas
 pois seu conteudo diz respeito ao cerne da aplicação*/
+
+//APP não carece de App externo

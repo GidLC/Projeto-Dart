@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:wigtes_atividade/app/View/produto_detalhes.dart';
 import 'View/estoque_list.dart';
 
 class MyApp extends StatelessWidget {
   static const HOME = '/';
   static const CADASTRO_PRODUTO = 'cadastro_produto';
+  static const PRODUTO_DETALHES = 'produto_detalhes';
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         HOME: (context) => estoque_list(),
-        CADASTRO_PRODUTO: (context) => estoque_list()
+        CADASTRO_PRODUTO: (context) => estoque_list(),
+        PRODUTO_DETALHES: (context) => Produtodetalhes()
       },
     );
   }
