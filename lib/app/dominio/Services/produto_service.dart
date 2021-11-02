@@ -13,7 +13,7 @@ class ProdutoService {
     dao.save(produto);
   }
 
-  remove(int id) {
+  remove(dynamic id) {
     dao.remove(id);
   }
 

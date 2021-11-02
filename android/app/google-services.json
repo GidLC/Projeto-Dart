@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "994958522848",
+    "project_id": "projetojava-23d57",
+    "storage_bucket": "projetojava-23d57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994958522848:android:7642102875b2ef89ec9385",
+        "android_client_info": {
+          "package_name": "com.example.wigtes_atividade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994958522848-cm3gki5ehtosbnphq7ic56jfdv4t2toe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq-1qtDyh54urkGeFxgucPnzDNlNTFPS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994958522848-cm3gki5ehtosbnphq7ic56jfdv4t2toe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

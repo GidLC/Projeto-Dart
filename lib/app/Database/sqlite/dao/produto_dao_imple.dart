@@ -20,13 +20,13 @@ class ProdutoDAOimple implements ProdutoDAO {
     List<Produtos> lista = List.generate(resultado.length, (i) {
       var linha = resultado[i];
       return Produtos(
-          linha['id'], linha['marca'], linha['produto'], linha['valor']);
+         id: linha['id'],marca : linha['marca'], produto : linha['produto'], valor : linha['valor']);
     });
     return lista;
   }
 
   @override
-  remove(int id) async {
+  remove(dynamic id) async {
     bd = await Connection.get();
     var sql = 'DELETE FROM produtos WHERE id = ?';
     bd.rawDelete(sql, [id]);

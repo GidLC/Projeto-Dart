@@ -1,30 +1,22 @@
-import 'dart:ffi';
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
-import 'package:mobx/mobx.dart';
-import 'package:wigtes_atividade/app/View/estoque_list.dart';
 import 'package:wigtes_atividade/app/dominio/Services/produto_service.dart';
 import 'package:wigtes_atividade/app/dominio/entidade/produto.dart';
 
-part 'produto_form_back.g.dart';
-
-class ProdutoFormBack = _ProdutoFormBack with _$ProdutoFormBack;
-
-abstract class _ProdutoFormBack with Store {
+class ProdutoFormBack {
   late Produtos produto;
   var _service = GetIt.I.get<ProdutoService>();
-  late bool _produtoValido;
-  late bool _marcaValida;
-  late bool _valorValido;
+  bool _produtoValido = 0 as bool;
+  bool _marcaValida = 0 as bool;
+  bool _valorValido = 0 as bool;
 
-  @action
-  bool get Valido => _produtoValido && _marcaValida && _valorValido;
+  bool get isValid => _produtoValido && _marcaValida && _valorValido;
 
   ProdutoFormBack(BuildContext context) {
     var parametros = ModalRoute.of(context)!.settings.arguments;
-    produto = (parametros == null) ? Produtos() : parametros;
+    produto = (parametros == null)
+        ? Produtos(marca: '', produto: '', valor: '')
+        : parametros;
   }
 
   save() async {
